@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><title>Dashboard</title></head>
+<body>
+    <h2>Stored Passwords</h2>
+    <ul>
+        {% for pw in passwords %}
+        <li>{{ pw.site }} - {{ pw.username }} - {{ cipher_suite.decrypt(pw.password_encrypted.encode('utf-8')) }}</li>
+        {% endfor %}
+    </ul>
+    <a href="/add_password">Add New Password</a>
+</body>
+</html>
